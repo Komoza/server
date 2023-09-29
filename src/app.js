@@ -8,6 +8,8 @@ const userRouter = require('./routes/users');
 const bookRouter = require('./routes/books');
 const actionRouter = require('./routes/action');
 
+const logger = require('./middlewares/logger');
+
 dotenv.config();
 const {
     PORT = 3000,
@@ -30,6 +32,7 @@ mongoose
 const app = express();
 
 app.use(cors());
+app.use(logger);
 app.use(bodyParser.json());
 app.use(userRouter);
 app.use(bookRouter);
