@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const userRouter = require('./routes/users');
 const bookRouter = require('./routes/books');
+const actionRouter = require('./routes/action');
 
 dotenv.config();
 const {
@@ -32,6 +33,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(userRouter);
 app.use(bookRouter);
+app.use(actionRouter);
 
 app.listen(PORT, () => {
     console.log(`Server was started at ${API_URL}:${PORT}`);

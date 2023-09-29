@@ -25,6 +25,10 @@ const bookSchema = new mongoose.Schema({
         required: true,
         minLenght: 2,
     },
+    borrower: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    },
 });
 
 module.exports = mongoose.model('book', bookSchema);

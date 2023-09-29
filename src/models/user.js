@@ -15,6 +15,12 @@ const userSchema = new mongoose.Schema({
         required: true,
         minLenght: 2,
     },
+    borrowed_books: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Book',
+        },
+    ],
 });
 
 module.exports = mongoose.model('user', userSchema);
